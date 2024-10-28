@@ -7,8 +7,8 @@ const Navbar = () => {
   return (
     <header className="h-14">
       <div className="ml-64">navbar</div>
-      <div className="fixed top-0 flex h-full w-64 flex-col bg-adminPanel-primary">
-        <div className="bg-adminPanel-secondary py-6 pl-4">
+      <div className="fixed top-0 flex h-full w-64 flex-col bg-adminPanel-p1">
+        <div className="bg-adminPanel-p2 py-6 pl-4">
           <Link href={"/admin-panel"}>
             <p className="font-bold text-white">Muventi - admin panel</p>
           </Link>
@@ -22,7 +22,7 @@ const Navbar = () => {
             </li>
             <li>
               <AdminButton
-                href="/admin-panel/realizaje"
+                href="/admin-panel/realizations"
                 icon={<AiFillProduct />}
               >
                 Realizacje

@@ -10,13 +10,14 @@ type TableRowProps = {
 
 export const TableRow = ({ image, name, description }: TableRowProps) => {
   return (
-    <tr className="flex h-[82px] items-center border-b text-[13px] font-normal">
-      <td className="w-11 flex-none pl-8">{image}</td>
-      <td className="w-96 flex-initial text-center">{name}</td>
-      <td className="w-32 flex-1">{description}</td>
-      <td className="flex w-32 flex-initial gap-4">
-        <ActionButton typeAction="edit" />
-        <ActionButton typeAction="delete" />
+    <tr className="grid h-[82px] w-full grid-cols-4 border-b px-6 text-center text-[13px] font-normal">
+      <td className="self-center">{image}</td>
+      <td className="self-center">{name}</td>
+      <td className="self-center">
+        <p>{description}</p>
+      </td>
+      <td className="self-center pr-4 text-right">
+        <ActionButton typeAction="edit" href="/admin-panel/offer/edit/1" />
       </td>
     </tr>
   );

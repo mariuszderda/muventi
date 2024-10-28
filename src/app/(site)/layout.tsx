@@ -5,7 +5,7 @@ const SiteLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <>{children}</>;
+  return <body>{children}</body>;
 };
 
 export default SiteLayout;

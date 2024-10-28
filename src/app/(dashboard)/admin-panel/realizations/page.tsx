@@ -1,15 +1,14 @@
 import { MainButton } from "@/components/admin-panel/buttons/main-button";
 import { Table } from "@/components/admin-panel/table/table";
-import { getOffers } from "@/lib/offers";
 
-const AdminOfferPage = async () => {
-  const offer = await getOffers();
-  console.log(offer);
+const RealizationsPage = () => {
   return (
     <section>
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl">Oferta</h2>
-        <MainButton href="/admin-panel/offer/create">Create</MainButton>
+        <h2 className="text-2xl">Realizations</h2>
+        <MainButton href="/admin-panel/offer/create">
+          New Realizations
+        </MainButton>
       </div>
       <div className="my-7 rounded bg-white p-5">
         <Table />
@@ -21,4 +20,4 @@ const AdminOfferPage = async () => {
   );
 };
 
-export default AdminOfferPage;
+export default RealizationsPage;

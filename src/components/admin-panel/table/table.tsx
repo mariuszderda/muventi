@@ -3,12 +3,12 @@ import { TableRow } from "@/components/admin-panel/table/table-row";
 export const Table = () => {
   return (
     <table className="w-full text-[11px] font-bold">
-      <thead>
-        <tr className="flex h-11 items-center bg-adminPanel-mainGray uppercase text-adminPanel-secondary/70">
-          <th className="w-11 flex-none pl-8">Image</th>
-          <th className="w-96 flex-initial">Name</th>
-          <th className="w-32 flex-1">Description</th>
-          <th className="w-32 flex-initial text-center">Actions</th>
+      <thead className="w-full bg-adminPanel-p3 px-6 uppercase text-adminPanel-p2/70">
+        <tr className="mx-6 grid h-11 grid-cols-4 items-center justify-between">
+          <th className="">Image</th>
+          <th className="text-center">Name</th>
+          <th className="">Description</th>
+          <th className="self-center pr-4 text-right">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -17,19 +17,19 @@ export const Table = () => {
           name="RollUp"
           description="Duży i wytrzymały rollup"
           actionName="delete"
-        />{" "}
+        />
         <TableRow
           image="Image"
           name="RollUp"
           description="Duży i wytrzymały rollup"
           actionName="delete"
-        />{" "}
+        />
         <TableRow
           image="Image"
           name="RollUp"
           description="Duży i wytrzymały rollup"
           actionName="delete"
-        />{" "}
+        />
         <TableRow
           image="Image"
           name="RollUp"

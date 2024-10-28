@@ -1,0 +1,67 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1570.478"
+        height="1570.478"
+        viewBox="0 0 1570.478 1570.478"
+>
+    <defs>
+        <clipPath id="clip-path">
+            <rect
+                    id="Rectangle_1489"
+                    data-name="Rectangle 1489"
+                    width="1570.478"
+                    height="1570.478"
+                    transform="translate(239.762 239.76)"
+                    fill="none"
+            />
+        </clipPath>
+        <clipPath id="clip-path-2">
+            <rect
+                    id="Rectangle_1490"
+                    data-name="Rectangle 1490"
+                    width="666.497"
+                    height="483.377"
+                    transform="translate(691.753 783.31)"
+                    fill="none"
+            />
+        </clipPath>
+    </defs>
+    <g
+            id="Group_295"
+            data-name="Group 295"
+            transform="translate(-239.762 -239.76)"
+            opacity="0.37"
+    >
+        <g id="Group_294" data-name="Group 294">
+            <g id="Group_293" data-name="Group 293" clip-path="url(#clip-path)">
+                <rect
+                        id="Rectangle_1488"
+                        data-name="Rectangle 1488"
+                        width="1570.476"
+                        height="1570.476"
+                        transform="translate(239.762 239.762)"
+                        fill="#ddd"
+                />
+            </g>
+        </g>
+    </g>
+    <g
+            id="Group_296"
+            data-name="Group 296"
+            transform="translate(-239.762 -239.76)"
+            clip-path="url(#clip-path-2)"
+    >
+        <path
+                id="Path_406"
+                data-name="Path 406"
+                d="M1332.3,783.314H717.7a25.978,25.978,0,0,0-25.951,25.95v431.472a25.987,25.987,0,0,0,25.951,25.951H1332.3a26,26,0,0,0,25.951-25.951V809.264a25.986,25.986,0,0,0-25.951-25.95M717.7,802.325H1332.3a6.951,6.951,0,0,1,6.939,6.939v375.588l-143.88-143.878L1059.69,1176.639,885.669,1002.618l-174.905,174.9V809.264a6.951,6.951,0,0,1,6.939-6.939"
+                fill="#1c2d37"
+        />
+        <path
+                id="Path_407"
+                data-name="Path 407"
+                d="M1110.174,970a43.846,43.846,0,1,0-43.846-43.847A43.846,43.846,0,0,0,1110.174,970"
+                fill="#1c2d37"
+        />
+    </g>
+</svg>

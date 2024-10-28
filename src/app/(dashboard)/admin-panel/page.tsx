@@ -1,5 +1,5 @@
 const AdminPanelPage = () => {
-  return <main className="">AdminPanelPage</main>;
+  return <section className="">AdminPanelPage</section>;
 };
 
 export default AdminPanelPage;
