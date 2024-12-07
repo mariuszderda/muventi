@@ -3,8 +3,11 @@ import { Table } from "@/components/admin-panel/table/table";
 import { getOffers } from "@/lib/offers";
 
 const AdminOfferPage = async () => {
-  const offer = await getOffers();
-  console.log(offer);
+  let offers = await getOffers();
+  if (!offers) {
+    offers = [];
+  }
+  console.log(typeof offers);
   return (
     <section>
       <div className="flex items-center justify-between">
@@ -12,10 +15,13 @@ const AdminOfferPage = async () => {
         <MainButton href="/admin-panel/offer/create">Create</MainButton>
       </div>
       <div className="my-7 rounded bg-white p-5">
-        <Table />
-        <p className="mt-5 w-full text-center text-[13px] text-adminPanel-p5">
-          Show more
-        </p>
+        {/* @ts-expect-error query result error*/}
+        <Table data={offers} />
+        {offers && (
+          <p className="mt-5 w-full text-center text-[13px] text-adminPanel-p5">
+            Show more
+          </p>
+        )}
       </div>
     </section>
   );

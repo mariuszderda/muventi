@@ -5,15 +5,23 @@ type FormInputProps = {
   label: string;
   type: string;
   error?: string | null;
+  value?: string;
 };
 
-export const FormInput = ({ name, label, type, error }: FormInputProps) => {
+export const FormInput = ({
+  name,
+  label,
+  type,
+  error,
+  value,
+}: FormInputProps) => {
   return (
     <div className="relative z-0 mx-auto my-8 lg:mx-0 lg:max-w-96">
       <input
         type={type}
         id={name}
         name={name}
+        value={value}
         className={
           "peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
         }

@@ -5,7 +5,7 @@ import { FormInput } from "@/components/admin-panel/forms/form-input";
 import { ImagePicker } from "@/components/admin-panel/forms/image-picker";
 import { PageTitle } from "@/components/admin-panel/page-title";
 import { offerFormInputs } from "@/constans/forms";
-import { offerStateErrorType } from "@/types";
+import { OfferStateErrorType } from "@/types";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { useFormState } from "react-dom";
@@ -19,7 +19,7 @@ const CreateOffer = ({ action }: ActionProps) => {
   const [state, formAction, isPending] = useFormState(action, {});
   const [imageOffer, setImageOffer] = useState<string | null>(null);
   // @ts-expect-error empty object
-  const errors: offerStateErrorType = state?.errors || null;
+  const errors: OfferStateErrorType = state?.errors || null;
 
   return (
     <main>

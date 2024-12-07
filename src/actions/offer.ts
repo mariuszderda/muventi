@@ -1,29 +1,13 @@
 "use server";
 
 import { uploadImage } from "@/lib/cloudinary";
+import { validateFormData } from "@/lib/helpers";
 import { storeOffer } from "@/lib/offers";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function createOffer(_: unknown, formData: FormData) {
-  const title = formData.get("title") as string;
-  const image = formData.get("image") as File;
-  const description = formData.get("description") as string;
-  const errors = {
-    title: "",
-    description: "",
-    image: "",
-  };
-
-  if (!title || title?.trim().length === 0) {
-    errors.title = "Title is required.";
-  }
-  if (!description || description.trim().length === 0) {
-    errors.description = "Content is required";
-  }
-  if (!image || typeof image !== "object" || image.size === 0) {
-    errors.image = "Image is required";
-  }
+  const { title, description, image, errors } = validateFormData(formData);
 
   if (errors.title || errors.description || errors.image) {
     return { errors };
@@ -45,7 +29,6 @@ export async function createOffer(_: unknown, formData: FormData) {
     title,
     description,
   });
-  revalidatePath("/admin-panel/offer/create");
   revalidatePath("/admin-panel/offer");
   redirect("/admin-panel/offer");
 }
