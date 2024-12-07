@@ -2,7 +2,7 @@
 
 import { createConnection } from "@/config/db";
 import { initDb } from "@/lib/initDb";
-import { CreateOfferType, DataFormDBType, UpdateOfferType } from "@/types";
+import { CreateOfferType, GetSingleOffer, UpdateOfferType } from "@/types";
 
 initDb();
 
@@ -32,10 +32,10 @@ export const updateOffer = async ({
 }: UpdateOfferType) => {
   const db = await createConnection();
   const sql = `UPDATE offers
-               SET title=${title},
-                   description=${description},
-                   imageUrl=${image}
-               WHERE id = UUID_TO_BIN(${id}) VALUES (?, ?, ?)`;
+               SET title='${title}',
+                   description='${description}',
+                   imageUrl='${image}'
+               WHERE id = UUID_TO_BIN('${id}')`;
   try {
     const [result, fields] = await db.execute({ sql });
     return { result, fields };
@@ -44,9 +44,9 @@ export const updateOffer = async ({
   }
 };
 
-export const getOffer: (
+export const getOffer: (id: string) => Promise<GetSingleOffer> = async (
   id: string
-) => Promise<DataFormDBType | undefined> = async (id: string) => {
+) => {
   const db = await createConnection();
   const sql = `SELECT BIN_TO_UUID(id) as idOffer, title, description, imageUrl
                FROM offers
@@ -78,7 +78,7 @@ export const getOffers = async () => {
       };
     }
     return result;
-  } catch (err) {
-    console.log(err);
+  } catch (e) {
+    console.log(e);
   }
 };

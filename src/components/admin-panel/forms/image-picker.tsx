@@ -5,6 +5,7 @@ import React, {
   ChangeEvent,
   Dispatch,
   SetStateAction,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -13,34 +14,42 @@ export const ImagePicker = ({
   label,
   name,
   setImage,
+  defaultValue,
   error,
 }: {
   label: string;
   name: string;
+  defaultValue: string | undefined;
   setImage: Dispatch<SetStateAction<string | null>>;
   error: string;
 }) => {
   const [filename, setFilename] = useState("");
   const inputImage = useRef<HTMLInputElement>(null);
+
   const handlePickClick = () => {
     inputImage.current?.click();
   };
+
+  useEffect(() => {
+    if (defaultValue) {
+      setImage(defaultValue);
+      setFilename(defaultValue.split("/").pop() || defaultValue);
+    }
+  }, [defaultValue]);
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     const file = (target.files as FileList)[0];
     if (!file) {
-      setImage(null);
+      setImage(defaultValue || null);
       setFilename(label);
       return;
     }
 
     const fileReader = new FileReader();
     fileReader.onload = () => {
-      // @ts-expect-error file
-      setImage(fileReader.result);
-      // @ts-expect-error filename
-      setFilename(target!.files[0].name);
+      setImage(fileReader.result as string);
+      setFilename(target.files![0].name);
     };
     fileReader.readAsDataURL(file);
   };

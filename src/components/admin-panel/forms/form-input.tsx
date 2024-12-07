@@ -1,11 +1,12 @@
 import clsx from "clsx";
+import { SetStateAction, useState } from "react";
 
 type FormInputProps = {
   name: string;
   label: string;
   type: string;
   error?: string | null;
-  value?: string;
+  defaultValue?: string;
 };
 
 export const FormInput = ({
@@ -13,15 +14,22 @@ export const FormInput = ({
   label,
   type,
   error,
-  value,
+  defaultValue,
 }: FormInputProps) => {
+  const [inputValue, setInputValue] = useState(defaultValue || "");
+  const handleChange = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
+    setInputValue(event.target.value);
+  };
   return (
     <div className="relative z-0 mx-auto my-8 lg:mx-0 lg:max-w-96">
       <input
         type={type}
         id={name}
         name={name}
-        value={value}
+        value={inputValue}
+        onChange={handleChange}
         className={
           "peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent px-0 py-2.5 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
         }

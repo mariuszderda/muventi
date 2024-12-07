@@ -7,7 +7,6 @@ const AdminOfferPage = async () => {
   if (!offers) {
     offers = [];
   }
-  console.log(typeof offers);
   return (
     <section>
       <div className="flex items-center justify-between">

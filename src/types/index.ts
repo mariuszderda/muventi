@@ -1,13 +1,11 @@
 import { QueryResult } from "mysql2";
 
-export type DataFormDBType =
-  | {
-      idOffer: string;
-      title: string;
-      description: string;
-      image: string;
-    }
-  | QueryResult;
+export type DataFormDBType = {
+  idOffer: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+};
 export type CreateOfferType = {
   title: string;
   description: string;
@@ -33,13 +31,4 @@ export type OfferStateErrorType = {
 };
 
 export type GetOfferQuery = DataFormDBType[] | QueryResult;
-export type GetSingleOffer = DataFormDBType[];
-// | object
-// | undefined
-// | OkPacket
-// | ResultSetHeader
-// | ResultSetHeader[]
-// | RowDataPacket[]
-// | RowDataPacket[][]
-// | OkPacket[]
-// | [RowDataPacket[], ResultSetHeader];
+export type GetSingleOffer = DataFormDBType[] | undefined | QueryResult;
