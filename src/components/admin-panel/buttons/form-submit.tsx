@@ -10,8 +10,11 @@ type FormSubmitProps = {
 export const FormSubmit = ({ label, disabled }: FormSubmitProps) => {
   const status = useFormStatus();
   if (status.pending) {
-    console.log("LOADING", label);
-    return <p>Creating...</p>;
+    return (
+      <p className="text-center text-adminPanel-p5">
+        {label === "Update offer" ? "Updating..." : "Creating..."}
+      </p>
+    );
   }
   return (
     <>

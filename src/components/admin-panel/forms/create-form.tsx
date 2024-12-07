@@ -32,22 +32,22 @@ const CreateForm = ({ action, data }: ActionProps) => {
       <form className="mr-7 w-full" action={formAction} ref={formRef}>
         <input type="hidden" name="id" value={data?.idOffer} />
         <div className="relative z-0 mx-auto my-8 lg:mx-0 lg:max-w-96">
-          {offerFormInputs.map(({ id, label, name, type }) => {
+          {offerFormInputs.map(({ id, label, title, type }) => {
             if (type === "text") {
               return (
                 <FormInput
                   key={id}
-                  name={name}
+                  name={title}
                   label={label}
                   type={type}
                   defaultValue={
                     data
-                      ? name === "title"
+                      ? title === "title"
                         ? data?.title
                         : data?.description
                       : undefined
                   }
-                  error={!errors ? "" : errors?.[name]}
+                  error={!errors ? "" : errors?.[title]}
                 />
               );
             }
@@ -56,10 +56,10 @@ const CreateForm = ({ action, data }: ActionProps) => {
                 <ImagePicker
                   key={id}
                   label={label}
-                  name={name}
+                  name={title}
                   setImage={setImageOffer}
                   defaultValue={data ? data?.imageUrl : undefined}
-                  error={!errors ? "" : errors[name]}
+                  error={!errors ? "" : errors[title]}
                 />
               );
             }

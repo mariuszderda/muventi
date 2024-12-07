@@ -1,7 +1,7 @@
 import { TableRow } from "@/components/admin-panel/table/table-row";
-import { DataFormDBType } from "@/types";
+import { TableRowProps } from "@/types";
 
-export const Table = ({ data }: { data: DataFormDBType[] }) => {
+export const Table = ({ data }: { data: TableRowProps[] }) => {
   return (
     <table className="w-full text-[11px] font-bold">
       <thead className="w-full bg-adminPanel-p3 px-6 uppercase text-adminPanel-p2/70">
@@ -14,15 +14,15 @@ export const Table = ({ data }: { data: DataFormDBType[] }) => {
       </thead>
       <tbody>
         {data.length < 1 ? (
-          <h3 className="pt-4 text-center text-xl font-medium text-adminPanel-p2">
+          <p className="pt-4 text-center text-xl font-medium text-adminPanel-p2">
             Brak danych.
-          </h3>
+          </p>
         ) : (
-          data?.map((item: DataFormDBType) => (
+          data?.map((item: TableRowProps) => (
             <TableRow
               key={item.id}
               image={item.image}
-              name={item.title}
+              title={item.title}
               description={item.description}
               id={item.id}
             />

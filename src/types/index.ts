@@ -18,7 +18,7 @@ export type UpdateOfferType = {
 
 export type TableRowProps = {
   image: string;
-  name: string;
+  title: string;
   description: string;
   id: string;
 };

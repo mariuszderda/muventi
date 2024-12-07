@@ -2,19 +2,19 @@ export const offerFormInputs = [
   {
     id: 1,
     label: "Offer Title",
-    name: "title",
+    title: "title",
     type: "text",
   },
   {
     id: 2,
     label: "Description",
-    name: "description",
+    title: "description",
     type: "text",
   },
   {
     id: 3,
     label: "Add an image",
-    name: "image",
+    title: "image",
     type: "file",
   },
 ];
