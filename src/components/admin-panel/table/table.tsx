@@ -1,7 +1,13 @@
 import { TableRow } from "@/components/admin-panel/table/table-row";
 import { TableRowProps } from "@/types";
 
-export const Table = ({ data }: { data: TableRowProps[] }) => {
+export const Table = ({
+  data,
+  path,
+}: {
+  data: TableRowProps[];
+  path: string;
+}) => {
   return (
     <table className="w-full text-[11px] font-bold">
       <thead className="w-full bg-adminPanel-p3 px-6 uppercase text-adminPanel-p2/70">
@@ -25,6 +31,7 @@ export const Table = ({ data }: { data: TableRowProps[] }) => {
               title={item.title}
               description={item.description}
               id={item.id}
+              path={path}
             />
           ))
         )}

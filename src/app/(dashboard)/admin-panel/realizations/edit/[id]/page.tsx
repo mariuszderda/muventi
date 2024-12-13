@@ -1,8 +1,11 @@
-import { deleteOffer, updateOfferAction } from "@/actions/offer";
+import {
+  updateRealizationAction,
+  deleteRealization,
+} from "@/actions/realization";
 import CreateForm from "@/components/admin-panel/forms/create-form";
 import { PageTitle } from "@/components/admin-panel/page-title";
-import { offerFormInputs } from "@/constans/forms";
-import { getOffer } from "@/lib/offers";
+import { realizationFormInputs } from "@/constans/forms";
+import { getRealization } from "@/lib/realizations";
 import { DataFormDBType, GetSingleOffer } from "@/types";
 
 const EditPage = async ({
@@ -12,12 +15,12 @@ const EditPage = async ({
     id: string;
   };
 }) => {
-  const offer: GetSingleOffer = await getOffer(id);
-  if (offer === undefined) {
+  const realization: GetSingleOffer = await getRealization(id);
+  if (realization === undefined) {
     return <h2>Coś poszło nie tak ):</h2>;
   }
   // @ts-expect-error array type
-  const data: DataFormDBType = offer[0];
+  const data: DataFormDBType = realization[0];
 
   return (
     <main>
@@ -25,10 +28,10 @@ const EditPage = async ({
         <PageTitle>Edit offer </PageTitle>
         <div className="flex w-full flex-col justify-between bg-adminPanel-p4 p-5 lg:flex-row">
           <CreateForm
-            action={updateOfferAction}
+            action={updateRealizationAction}
             data={data}
-            deleteFunction={deleteOffer}
-            inputList={offerFormInputs}
+            deleteFunction={deleteRealization}
+            inputList={realizationFormInputs}
           />
         </div>
       </section>

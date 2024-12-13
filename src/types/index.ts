@@ -21,6 +21,7 @@ export type TableRowProps = {
   title: string;
   description: string;
   id: string;
+  path: string;
 };
 
 export type OfferStateErrorType = {
@@ -30,5 +31,13 @@ export type OfferStateErrorType = {
   image: string;
 };
 
+export type InputListType = {
+  id: number;
+  label: string;
+  title: string;
+  type: string;
+};
+
 export type GetOfferQuery = DataFormDBType[] | QueryResult;
 export type GetSingleOffer = DataFormDBType[] | undefined | QueryResult;
+export type GetAll = TableRowProps[] | QueryResult | undefined;

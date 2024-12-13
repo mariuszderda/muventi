@@ -18,3 +18,24 @@ export const offerFormInputs = [
     type: "file",
   },
 ];
+
+export const realizationFormInputs = [
+  {
+    id: 1,
+    label: "Realization Title",
+    title: "title",
+    type: "text",
+  },
+  {
+    id: 2,
+    label: "Description",
+    title: "description",
+    type: "text",
+  },
+  {
+    id: 3,
+    label: "Add an image",
+    title: "image",
+    type: "file",
+  },
+];

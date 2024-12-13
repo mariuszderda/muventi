@@ -28,7 +28,7 @@ const Navbar = () => {
                 Realizacje
               </AdminButton>
             </li>
-            <li>kalkulator</li>
+            {/*<li>kalkulator</li>*/}
           </ul>
         </nav>
       </div>

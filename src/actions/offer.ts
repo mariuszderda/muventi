@@ -6,6 +6,7 @@ import { getOffer, storeOffer, updateOffer } from "@/lib/offers";
 import { GetSingleOffer } from "@/types";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { deleteOffer as deleteQuery } from "@/lib/offers";
 
 export async function createOfferAction(_: unknown, formData: FormData) {
   const { title, description, image, errors } = validateFormData(
@@ -78,6 +79,13 @@ export async function updateOfferAction(_: unknown, formData: FormData) {
     image: !imageUrl ? oldImage : imageUrl,
     title,
   });
+
+  revalidatePath("/admin-panel/offer");
+  redirect("/admin-panel/offer");
+}
+
+export async function deleteOffer(id: string) {
+  await deleteQuery(id);
 
   revalidatePath("/admin-panel/offer");
   redirect("/admin-panel/offer");

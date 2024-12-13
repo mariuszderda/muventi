@@ -35,7 +35,7 @@ export const ImagePicker = ({
       setImage(defaultValue);
       setFilename(defaultValue.split("/").pop() || defaultValue);
     }
-  }, [defaultValue]);
+  }, [defaultValue, setImage]);
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;

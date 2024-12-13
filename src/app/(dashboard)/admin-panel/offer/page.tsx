@@ -15,7 +15,7 @@ const AdminOfferPage = async () => {
       </div>
       <div className="my-7 rounded bg-white p-5">
         {/* @ts-expect-error query result error*/}
-        <Table data={offers} />
+        <Table data={offers} path={"offer"} />
         {offers && (
           <p className="mt-5 w-full text-center text-[13px] text-adminPanel-p5">
             Show more
