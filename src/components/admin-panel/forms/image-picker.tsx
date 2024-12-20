@@ -13,14 +13,14 @@ import React, {
 export const ImagePicker = ({
   label,
   name,
-  setImage,
+  setImageAction,
   defaultValue,
   error,
 }: {
   label: string;
   name: string;
   defaultValue: string | undefined;
-  setImage: Dispatch<SetStateAction<string | null>>;
+  setImageAction: Dispatch<SetStateAction<string | null>>;
   error: string;
 }) => {
   const [filename, setFilename] = useState("");
@@ -32,23 +32,23 @@ export const ImagePicker = ({
 
   useEffect(() => {
     if (defaultValue) {
-      setImage(defaultValue);
+      setImageAction(defaultValue);
       setFilename(defaultValue.split("/").pop() || defaultValue);
     }
-  }, [defaultValue, setImage]);
+  }, [defaultValue, setImageAction]);
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     const file = (target.files as FileList)[0];
     if (!file) {
-      setImage(defaultValue || null);
+      setImageAction(defaultValue || null);
       setFilename(label);
       return;
     }
 
     const fileReader = new FileReader();
     fileReader.onload = () => {
-      setImage(fileReader.result as string);
+      setImageAction(fileReader.result as string);
       setFilename(target.files![0].name);
     };
     fileReader.readAsDataURL(file);

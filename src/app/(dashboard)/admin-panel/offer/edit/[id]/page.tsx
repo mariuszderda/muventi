@@ -5,13 +5,15 @@ import { offerFormInputs } from "@/constans/forms";
 import { getOffer } from "@/lib/offers";
 import { DataFormDBType, GetSingleOffer } from "@/types";
 
-const EditPage = async ({
-  params: { id },
-}: {
-  params: {
+const EditPage = async (props: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }) => {
+  const params = await props.params;
+
+  const { id } = params;
+
   const offer: GetSingleOffer = await getOffer(id);
   if (offer === undefined) {
     return <h2>Coś poszło nie tak ):</h2>;

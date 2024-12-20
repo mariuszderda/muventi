@@ -20,9 +20,13 @@ export const Table = ({
       </thead>
       <tbody>
         {data.length < 1 ? (
-          <p className="pt-4 text-center text-xl font-medium text-adminPanel-p2">
-            Brak danych.
-          </p>
+          <tr>
+            <td>
+              <p className="pt-4 text-center text-xl font-medium text-adminPanel-p2">
+                Brak danych.
+              </p>
+            </td>
+          </tr>
         ) : (
           data?.map((item: TableRowProps) => (
             <TableRow

@@ -6,8 +6,7 @@ import { FormInput } from "@/components/admin-panel/forms/form-input";
 import { ImagePicker } from "@/components/admin-panel/forms/image-picker";
 import { DataFormDBType, InputListType, OfferStateErrorType } from "@/types";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import { useFormState } from "react-dom";
+import React, { useEffect, useRef, useState, useActionState } from "react";
 
 type ActionProps = {
   action: (_: unknown, formData: FormData) => object | Promise<object>;
@@ -23,7 +22,7 @@ const CreateForm = ({
   inputList,
 }: ActionProps) => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction, isPending] = useFormState(action, {});
+  const [state, formAction, isPending] = useActionState(action, {});
   const [imageOffer, setImageOffer] = useState<string | null>(null);
   // @ts-expect-error errors exist
   const errors: OfferStateErrorType = state.errors! || null;
@@ -65,7 +64,7 @@ const CreateForm = ({
                     key={id}
                     label={label}
                     name={title}
-                    setImage={setImageOffer}
+                    setImageAction={setImageOffer}
                     defaultValue={data ? data?.imageUrl : undefined}
                     error={!errors ? "" : errors[title]}
                   />

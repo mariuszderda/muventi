@@ -8,13 +8,15 @@ import { realizationFormInputs } from "@/constans/forms";
 import { getRealization } from "@/lib/realizations";
 import { DataFormDBType, GetSingleOffer } from "@/types";
 
-const EditPage = async ({
-  params: { id },
-}: {
-  params: {
+const EditPage = async (props: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }) => {
+  const params = await props.params;
+
+  const { id } = params;
+
   const realization: GetSingleOffer = await getRealization(id);
   if (realization === undefined) {
     return <h2>Coś poszło nie tak ):</h2>;

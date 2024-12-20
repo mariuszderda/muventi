@@ -22,6 +22,12 @@ const config: Config = {
           p5: "#3B86FF",
         },
       },
+      screens: {
+        main: "1440px",
+      },
+      fontFamily: {
+        onest: ["Onest", "sans-serif"],
+      },
     },
     fontFamily: {
       "source-pro": ["source-sans-pro", "sans-serif"],

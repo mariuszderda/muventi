@@ -11,7 +11,7 @@ const AdminOfferPage = async () => {
     <section>
       <div className="flex items-center justify-between">
         <h2 className="text-2xl">Oferta</h2>
-        <MainButton href="/admin-panel/offer/create">Create</MainButton>
+        <MainButton href="/admin-panel/offer/create">Stwórz</MainButton>
       </div>
       <div className="my-7 rounded bg-white p-5">
         {/* @ts-expect-error query result error*/}

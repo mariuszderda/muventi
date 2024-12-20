@@ -10,9 +10,9 @@ const RealizationsPage = async () => {
   return (
     <section>
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl">Realizations</h2>
+        <h2 className="text-2xl">Realizacje</h2>
         <MainButton href="/admin-panel/realizations/create">
-          New Realizations
+          Nowe realizacje
         </MainButton>
       </div>
       <div className="my-7 rounded bg-white p-5">
