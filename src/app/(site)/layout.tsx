@@ -7,7 +7,7 @@ const SiteLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <body className="px-4 font-onest">
+    <body className="font-onest">
       <Navbar />
       {children}
     </body>

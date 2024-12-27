@@ -28,9 +28,18 @@ const config: Config = {
       fontFamily: {
         onest: ["Onest", "sans-serif"],
       },
+      backgroundImage: {
+        "offer-bgi": "url('/images/offer_background.svg')",
+      },
     },
     fontFamily: {
       "source-pro": ["source-sans-pro", "sans-serif"],
+    },
+    boxShadow: {
+      "3xl": "13px 19px 25.8px rgba(0, 0, 0, 0.37)",
+    },
+    listStyleImage: {
+      checkmark: "url('/images/offer/checkmark.svg')",
     },
   },
   plugins: [],

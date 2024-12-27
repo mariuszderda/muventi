@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Navbar = () => {
   return (
-    <header className="fixed left-0 top-0 h-12 w-full px-16 py-8">
+    <header className="fixed left-0 top-0 z-[9999] h-12 w-full bg-white/70 px-16 pb-16 pt-4 backdrop-blur-md">
       <div className="mx-auto flex max-w-screen-main items-center justify-between">
         <Image
           src={"/images/muventi-studio-graficzne-logo-center.png"}
