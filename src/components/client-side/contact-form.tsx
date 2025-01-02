@@ -33,7 +33,7 @@ export const ContactForm = () => {
           placeholder="Wiadomość..."
         />
       </div>
-      <button className="h-36 w-full border border-site-primary bg-site-mainGray text-5xl font-bold uppercase text-site-primary">
+      <button className="h-36 w-full border border-site-primary bg-site-mainGray/40 text-5xl font-bold uppercase text-site-primary">
         Wyślij
       </button>
     </form>

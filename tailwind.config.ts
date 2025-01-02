@@ -13,6 +13,7 @@ const config: Config = {
           primary: "#3D2683",
           secondary: "#29B8CE",
           mainGray: "#A39BA8",
+          secondGray: "#D9D9D9",
         },
         adminPanel: {
           p1: "#43425D",
