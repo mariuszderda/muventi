@@ -2,10 +2,11 @@ export const RealizationDesk = () => {
   return (
     <svg
       width="1430"
-      height="633"
+      // height="633"
       viewBox="0 0 1430 633"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-full"
     >
       <g id="Group">
         <g id="Group_2">

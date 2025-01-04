@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export const AdvertisingMaterials = () => {
   return (
-    <section className="mx-auto mt-28 max-w-screen-main">
-      <div className="flex justify-between">
-        <div className="flex flex-col gap-12">
+    <section className="mx-auto mt-14 max-w-screen-main px-4 md:mt-28 md:p-0">
+      <div className="flex flex-col justify-between md:flex-row">
+        <div className="order-2 mt-12 flex flex-col gap-12 md:order-1 md:mt-0">
           <Image
             src={"/images/advertising-materials/materiały-reklamowe-2.jpg"}
             alt="lala"
@@ -19,8 +19,9 @@ export const AdvertisingMaterials = () => {
             height={527}
           />
         </div>
-        <article className="ml-28 max-w-screen-md text-2xl">
-          <SectionTitle>materiały reklamowe</SectionTitle>
+        <article className="order-1 max-w-screen-md text-xl md:order-2 md:ml-28 md:text-2xl">
+          <SectionTitle>materiały</SectionTitle>
+          <SectionTitle>reklamowe</SectionTitle>
           <p className="mt-14 font-semibold">
             Wszystko w jednym miejscu – oszczędzaj swój cenny czas i otrzymuj
             gotowe materiały reklamowe!
