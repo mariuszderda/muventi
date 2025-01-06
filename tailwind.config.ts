@@ -29,6 +29,7 @@ const config: Config = {
       fontFamily: {
         onest: ["Onest", "sans-serif"],
         marydale: ["marydale", "sans-serif"],
+        pritzious: ["pritzious", "sans-serif"],
       },
       backgroundImage: {
         "offer-bgi": "url('/images/offer_background.svg')",
