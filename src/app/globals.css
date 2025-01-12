@@ -6,3 +6,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .main-section {
+    @apply mt-28 w-screen max-w-screen-main p-4 md:mx-auto md:mb-48;
+  }
+}

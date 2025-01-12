@@ -24,6 +24,13 @@ export type TableRowProps = {
   path: string;
 };
 
+export type RealizationDBDataType = {
+  image: string;
+  title: string;
+  description: string;
+  id: string;
+};
+
 export type OfferStateErrorType = {
   [key: string]: string;
   title: string;

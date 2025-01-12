@@ -70,6 +70,7 @@ export const Navbar = () => {
           </li>
           <li>
             <Link
+              onClick={handleMenuButtonClick}
               className="block h-24 w-80 text-center leading-normal transition hover:font-pritzious hover:text-8xl"
               href={"/oferta"}
             >
@@ -78,6 +79,7 @@ export const Navbar = () => {
           </li>
           <li>
             <Link
+              onClick={handleMenuButtonClick}
               className="block h-24 w-80 text-center leading-normal transition hover:font-pritzious hover:text-8xl"
               href={"/kontakt"}
             >
@@ -87,7 +89,7 @@ export const Navbar = () => {
           {/*<li>*/}
           {/*  <Link*/}
           {/*    className="block h-24 w-80 text-center leading-normal hover:font-pritzious hover:text-8xl"*/}
-          {/*    href={"/kontakt"}*/}
+          {/*    href={"/kalkulator"}*/}
           {/*  >*/}
           {/*    kalkulator*/}
           {/*  </Link>*/}
