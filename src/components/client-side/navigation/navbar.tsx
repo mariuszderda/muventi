@@ -12,6 +12,7 @@ export const Navbar = () => {
   const handleMenuButtonClick = () => {
     setIsOpen((prevState) => !prevState);
   };
+
   return (
     <header className="fixed left-0 top-0 z-[9999] h-12 w-full bg-white/70 px-4 pb-16 pt-4 backdrop-blur-md sm:px-16">
       <div className="mx-auto flex max-w-screen-main items-center justify-between">
@@ -28,7 +29,7 @@ export const Navbar = () => {
           </Link>
         </div>
         <button onClick={handleMenuButtonClick}>
-          <MenuIcon isOpen={!isOpen} fill="#353831" />
+          <MenuIcon isOpen={false} fill="#353831" />
         </button>
       </div>
       <div
@@ -56,13 +57,13 @@ export const Navbar = () => {
         </div>
         <menu
           className={clsx(
-            "my-auto flex flex-col items-center justify-center gap-28 pt-44 text-6xl font-black leading-normal text-site-secondGray transition"
+            "my-auto -mt-[70px] flex flex-col pl-[600px] font-phudu text-9xl font-normal leading-none text-site-secondGray transition"
           )}
         >
           <li>
             <Link
               onClick={handleMenuButtonClick}
-              className="block h-24 w-80 text-center leading-normal transition hover:font-pritzious hover:text-8xl"
+              className="block leading-none transition"
               href={"/realizacje"}
             >
               realizacje
@@ -71,7 +72,7 @@ export const Navbar = () => {
           <li>
             <Link
               onClick={handleMenuButtonClick}
-              className="block h-24 w-80 text-center leading-normal transition hover:font-pritzious hover:text-8xl"
+              className="block leading-none transition"
               href={"/oferta"}
             >
               oferta
@@ -80,7 +81,7 @@ export const Navbar = () => {
           <li>
             <Link
               onClick={handleMenuButtonClick}
-              className="block h-24 w-80 text-center leading-normal transition hover:font-pritzious hover:text-8xl"
+              className="block leading-none transition"
               href={"/kontakt"}
             >
               kontakt
@@ -88,7 +89,7 @@ export const Navbar = () => {
           </li>
           {/*<li>*/}
           {/*  <Link*/}
-          {/*    className="block h-24 w-80 text-center leading-normal hover:font-pritzious hover:text-8xl"*/}
+          {/*    className="block h-24 w-80 text-center"*/}
           {/*    href={"/kalkulator"}*/}
           {/*  >*/}
           {/*    kalkulator*/}

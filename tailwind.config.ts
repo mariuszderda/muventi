@@ -28,6 +28,7 @@ const config: Config = {
       },
       fontFamily: {
         onest: ["Onest", "sans-serif"],
+        phudu: ["Phudu", "serif"],
         marydale: ["marydale", "sans-serif"],
         pritzious: ["pritzious", "sans-serif"],
       },

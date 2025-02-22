@@ -5,7 +5,6 @@ import { RealizationDBDataType } from "@/types";
 const Page = async () => {
   // @ts-expect-error type data error
   let realization: RealizationDBDataType[] = await getRealizations();
-  console.log(realization);
   if (!realization) {
     realization = [];
   }
