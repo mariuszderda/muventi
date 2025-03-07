@@ -17,6 +17,9 @@
   .nav-hover-btn {
     @apply relative cursor-pointer uppercase after:absolute after:bottom-[25px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-site-secondGray;
   }
+  .mark-text {
+    @apply text-white content-['pam'] before:absolute before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:bg-gradient-to-r before:from-site-primary before:to-site-secondary before:p-3 before:transition-transform before:duration-300;
+  }
 }
 
 .menu-overlay {

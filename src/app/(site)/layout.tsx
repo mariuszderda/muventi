@@ -8,7 +8,7 @@ const SiteLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <body className="font-onest">
+    <body className="overflow-x-hidden font-onest">
       <Navbar />
       {children}
       <Footer />
