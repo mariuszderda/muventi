@@ -3,7 +3,7 @@ import { SectionTitle } from "@/components/client-side/section-title";
 
 export const Realization = () => {
   return (
-    <section className="mx-auto mt-28 max-w-screen-main">
+    <section className="mx-auto mt-28 max-w-screen-main px-4 md:p-0">
       <SectionTitle>wybrane realizacje</SectionTitle>
       <div className="mt-14 w-full md:mt-40">
         <RealizationDesk />

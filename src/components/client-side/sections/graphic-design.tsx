@@ -1,10 +1,15 @@
+"use client";
+
 import { CustomMark } from "@/components/client-side/custom-mark";
 import { SectionTitle } from "@/components/client-side/section-title";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 export const GraphicDesign = () => {
   return (
-    <section className="mx-auto mt-14 max-w-screen-main px-4 md:p-0">
+    <section className="mx-auto mt-28 max-w-screen-main px-4 md:p-0">
       <SectionTitle>projektowanie</SectionTitle>
       <SectionTitle>graficzne</SectionTitle>
       <div className="flex flex-col justify-between md:flex-row">

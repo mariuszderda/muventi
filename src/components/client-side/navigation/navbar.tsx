@@ -54,19 +54,20 @@ export const Navbar = () => {
       scaleX: 1,
       duration: 0.7,
       opacity: 1,
+      delay: 0.7,
     });
   }, []);
 
   return (
     <header
       ref={container}
-      className="fixed left-0 top-0 z-[9999] size-full h-12 bg-white/70 px-4 pb-16 pt-4 backdrop-blur-md sm:px-16"
+      className="fixed left-0 top-0 z-[9999] size-full h-12 bg-white/70 px-4 pb-16 pt-4 sm:px-16"
     >
       <div
         ref={menuBar}
-        className="mx-auto flex max-w-screen-main -scale-x-0 items-center justify-between opacity-0"
+        className="mx-auto flex max-w-screen-main -scale-x-0 items-center justify-between bg-[#F0F0F0] px-4 py-2 opacity-0 after:absolute after:left-1.5 after:top-1.5 after:h-full after:w-full after:border-[0.5px] after:border-site-mainGray"
       >
-        <div className="relative w-[180px]">
+        <div className="relative z-20 w-[180px]">
           <Link href={"/"}>
             <Image
               src={"/images/muventi-studio-graficzne-logo-center.png"}
@@ -78,7 +79,7 @@ export const Navbar = () => {
             />
           </Link>
         </div>
-        <button className="block" onClick={handleMenuButtonClick}>
+        <button className="z-20 block" onClick={handleMenuButtonClick}>
           <MenuIcon fill="#353831" />
         </button>
       </div>

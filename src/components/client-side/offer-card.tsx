@@ -18,20 +18,18 @@ export const OfferCard = ({
   return (
     <div
       className={clsx(
-        "relative h-[450px] w-full shrink-0 rounded-3xl bg-white p-4 shadow-3xl md:h-[750px] md:w-[530px]",
+        "relative h-[530px] w-[350px] shrink-0 rounded-3xl bg-white p-4 shadow-3xl 2xl:pb-32",
         containerClassName
       )}
     >
       <Image
         src={imageSrc}
         alt=""
-        className={clsx("absolute h-[120px] md:h-auto", imageClassNames)}
+        className={clsx("absolute h-[250px]", imageClassNames)}
       />
-      <div className="pt-44 md:mt-36">
-        <h4 className="ml-14 text-4xl font-semibold md:ml-16 md:text-[68px]">
-          {title}
-        </h4>
-        <ul className="ml-14 text-2xl md:ml-16 md:mt-12 md:text-[42px]">
+      <div className="pt-56">
+        <h4 className="ml-7 text-4xl font-semibold md:text-[48px]">{title}</h4>
+        <ul className="ml-14 mt-12 text-2xl md:ml-16 md:text-[24px]">
           {features.map((feat) => (
             <li
               key={feat}

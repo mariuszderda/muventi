@@ -11,7 +11,7 @@ export const CustomMark = ({
   customClassName?: string;
 }) => {
   return (
-    <span className="relative inline break-keep">
+    <span className="relative inline break-before-all">
       <span
         className={clsx(
           "mark-text",

@@ -19,6 +19,7 @@ export const Hero = () => {
     gsap.set(image, { scale: 0, autoAlpha: 0 });
 
     container?.current?.classList.remove("hidden");
+    container?.current?.classList.add("flex");
 
     gsap.to(title, {
       x: 0,
@@ -44,7 +45,7 @@ export const Hero = () => {
     <section className="relative h-dvh flex-col overflow-hidden md:mx-auto lg:max-w-screen-main lg:flex-row lg:justify-between">
       <div
         ref={container}
-        className="relative flex hidden h-full w-full flex-col items-center justify-between md:flex-row"
+        className="relative mx-4 mt-24 hidden h-full w-full flex-col items-center justify-between md:flex-row lg:m-0"
       >
         <div className="lg:w-1/2">
           <h2
