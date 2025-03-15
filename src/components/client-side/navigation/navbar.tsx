@@ -61,7 +61,7 @@ export const Navbar = () => {
   return (
     <header
       ref={container}
-      className="fixed left-0 top-0 z-[9999] size-full h-12 bg-white/70 px-4 pb-16 pt-4 sm:px-16"
+      className="fixed left-0 top-0 z-[9999] size-full h-12 px-4 pb-16 pt-4 sm:px-16"
     >
       <div
         ref={menuBar}

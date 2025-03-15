@@ -28,7 +28,7 @@ export const Offer = () => {
   useGSAP(
     () => {
       const tween = gsap.to(containerRef.current, {
-        x: -containerRef!.current!.scrollWidth * 0.7,
+        x: -containerRef!.current!.scrollWidth * 0.6,
         // duration: 3,
       });
 
@@ -37,10 +37,9 @@ export const Offer = () => {
         trigger: sectionRef.current,
         pin: true,
         toggleActions: "play none none reverse",
-        markers: true,
         start: "top top",
         end: () => `+=${getScrollAmount() * -1}`,
-        scrub: 2,
+        scrub: 2.5,
       });
     },
     { scope: sectionRef }
