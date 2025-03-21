@@ -17,12 +17,12 @@ export const AdvertisingMaterials = () => {
     () => {
       gsap.to(sectionRefAM.current, {
         scrollTrigger: {
-          pin: articleRef.current,
-          markers: true,
+          pin: containerRef.current,
+          // markers: true,
           trigger: containerRef.current,
-          start: "clamp(bottom 75%)",
-          end: "clamp(bottom 75%)",
+          start: "bottom 80%",
           endTrigger: imageRef.current,
+          end: "bottom 80%",
           scrub: true,
         },
       });
@@ -33,12 +33,12 @@ export const AdvertisingMaterials = () => {
   return (
     <section
       ref={sectionRefAM}
-      className="relative z-30 mx-auto mt-14 max-w-screen-main bg-white px-4 md:pt-14"
+      className="relative z-30 mx-auto mt-14 max-w-screen-main bg-white p-4 md:pt-14"
     >
       <div className="flex flex-col justify-between gap-1 md:flex-row">
         <div
           ref={imageRef}
-          className="relative z-40 order-2 mt-12 flex max-w-[524px] flex-col gap-12 bg-white pt-8 md:order-1 md:mt-0 md:pt-0"
+          className="relative z-40 order-2 flex max-w-[524px] flex-col gap-12 bg-white pt-8 md:order-1 md:mt-0 md:min-h-[1239px] md:pt-0"
         >
           <Image
             src={"/images/advertising-materials/materiały-reklamowe-2.jpg"}
@@ -54,10 +54,10 @@ export const AdvertisingMaterials = () => {
           />
         </div>
         <article
-          ref={articleRef}
+          ref={containerRef}
           className="order-1 max-w-screen-md text-xl md:order-2 md:ml-28 md:text-2xl"
         >
-          <div ref={containerRef}>
+          <div ref={articleRef}>
             <SectionTitle>materiały</SectionTitle>
             <SectionTitle>reklamowe</SectionTitle>
             <p className="mt-14 font-semibold">

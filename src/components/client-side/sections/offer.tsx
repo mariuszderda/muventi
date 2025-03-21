@@ -19,6 +19,7 @@ const offerFeatures = {
 export const Offer = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const sectionRef = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
 
   const getScrollAmount = () => {
     const racesWidth = containerRef!.current!.scrollWidth;
@@ -27,19 +28,16 @@ export const Offer = () => {
 
   useGSAP(
     () => {
-      const tween = gsap.to(containerRef.current, {
-        x: -containerRef!.current!.scrollWidth * 0.6,
-        // duration: 3,
-      });
-
-      ScrollTrigger.create({
-        animation: tween,
-        trigger: sectionRef.current,
-        pin: true,
-        toggleActions: "play none none reverse",
-        start: "top top",
-        end: () => `+=${getScrollAmount() * -1}`,
-        scrub: 2.5,
+      gsap.to(containerRef.current, {
+        x: -containerRef!.current!.scrollWidth * 0.7,
+        scrollTrigger: {
+          pin: true,
+          trigger: sectionRef.current,
+          start: "top top",
+          end: () => `+=${getScrollAmount() * -1} `,
+          scrub: true,
+          snap: [0, 0.1, 0.5, 0.8, 1],
+        },
       });
     },
     { scope: sectionRef }
