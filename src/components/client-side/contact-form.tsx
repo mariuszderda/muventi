@@ -5,7 +5,7 @@ export const ContactForm = () => {
         <label className="w-40 px-6 md:w-80">Imię i nazwisko:</label>
         <input
           type="text"
-          className="w-full placeholder:text-site-secondary"
+          className="w-full px-2 py-4 placeholder:text-site-secondary"
           placeholder="Imię i nazwisko..."
         />
       </div>
@@ -13,7 +13,7 @@ export const ContactForm = () => {
         <label className="w-40 px-6 md:w-80">Email:</label>
         <input
           type="text"
-          className="w-full placeholder:text-site-secondary"
+          className="w-full px-2 py-4 placeholder:text-site-secondary"
           placeholder="Email..."
         />
       </div>
@@ -21,15 +21,15 @@ export const ContactForm = () => {
         <label className="w-40 px-6 md:w-80">Telefon:</label>
         <input
           type="text"
-          className="w-full placeholder:text-site-secondary"
+          className="w-full px-2 py-4 placeholder:text-site-secondary"
           placeholder="Telefon..."
         />
       </div>
       <div className="flex min-h-20 w-full border pt-4 text-base font-semibold md:min-h-36 md:text-2xl">
-        <label className="w-40 px-6 md:w-80">Wiadomość:</label>
+        <label className="w-40 px-6 py-4 md:w-80">Wiadomość:</label>
         <textarea
           rows={5}
-          className="w-full placeholder:text-site-secondary"
+          className="w-full px-2 py-4 placeholder:text-site-secondary"
           placeholder="Wiadomość..."
         />
       </div>
