@@ -24,7 +24,6 @@ export const GraphicDesign = () => {
           trigger: articleRef.current,
           start: "bottom 70%",
           end: "bottom 70%",
-          // markers: true,
           endTrigger: imageRef.current,
           scrub: true,
         },

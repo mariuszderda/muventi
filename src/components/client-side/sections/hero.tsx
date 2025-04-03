@@ -1,39 +1,40 @@
 "use client";
 
 import { CustomMark } from "@/components/client-side/custom-mark";
+import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
+
+gsap.registerPlugin(useGSAP);
 
 export const Hero = () => {
   const container = useRef(null as HTMLDivElement | null);
   const titleRef = useRef(null);
+  const paragraphRef = useRef(null);
+  const imageRef = useRef(null);
 
-  useEffect(() => {
-    const title = titleRef.current;
-    const paragraph = container.current!.querySelector("#hero-paragraph");
-    const image = container.current!.querySelector("#hero-image");
-
-    gsap.set(title, { x: -1000, alpha: 0 });
-    gsap.set(paragraph, { y: 200, alpha: 0 });
-    gsap.set(image, { scale: 0, autoAlpha: 0 });
+  useGSAP(() => {
+    gsap.set(titleRef.current, { x: -1000, alpha: 0 });
+    gsap.set(paragraphRef.current, { y: 200, alpha: 0 });
+    gsap.set(imageRef.current, { scale: 0, autoAlpha: 0 });
 
     container?.current?.classList.remove("hidden");
     container?.current?.classList.add("flex");
 
-    gsap.to(title, {
+    gsap.to(titleRef.current, {
       x: 0,
       alpha: 1,
       duration: 1,
       ease: "power3.inOut",
     });
-    gsap.to(paragraph, {
+    gsap.to(paragraphRef.current, {
       y: 0,
       duration: 0.5,
       alpha: 1,
       ease: "power2.in",
     });
-    gsap.to(image, {
+    gsap.to(imageRef.current, {
       scale: 1,
       duration: 0.75,
       autoAlpha: 1,
@@ -56,7 +57,7 @@ export const Hero = () => {
             Projektowanie graficzne <br /> z <CustomMark>pomysłem.</CustomMark>
           </h2>
           <p
-            id="hero-paragraph"
+            ref={paragraphRef}
             className="absolute text-2xl font-semibold lg:text-7xl"
           >
             Więcej niż <CustomMark rotateToTop={false}>piękne</CustomMark>{" "}
@@ -65,7 +66,7 @@ export const Hero = () => {
         </div>
         <div className="relative -z-10 mt-12 md:mt-0">
           <Image
-            id="hero-image"
+            ref={imageRef}
             src={"/images/hero-image.png"}
             alt="Hero image"
             width={648}

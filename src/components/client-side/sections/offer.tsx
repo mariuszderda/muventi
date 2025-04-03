@@ -35,7 +35,7 @@ export const Offer = () => {
           trigger: sectionRef.current,
           start: "top top",
           end: () => `+=${getScrollAmount() * -1} `,
-          scrub: true,
+          scrub: 5,
           snap: [0, 0.1, 0.5, 0.8, 1],
         },
       });
