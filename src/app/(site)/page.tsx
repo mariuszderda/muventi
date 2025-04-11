@@ -7,7 +7,7 @@ import { Realization } from "@/components/client-side/sections/realization";
 import { getRealizations } from "@/lib/realizations";
 
 export default async function Home() {
-  const realizations = await getRealizations();
+  const realizations = await getRealizations(5);
   return (
     <main>
       <Hero />

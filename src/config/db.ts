@@ -11,6 +11,12 @@ export const createConnection = async () => {
       user: process.env.DB_USER,
       password: process.env.DB_PASS,
       database: process.env.DB_SCHEMA,
+      connectionLimit: 2,
+      maxIdle: 0,
+      idleTimeout: 0,
+      enableKeepAlive: false,
+      waitForConnections: true,
+      queueLimit: 0,
     });
     console.log("CREATING CONNECTION!!!");
   }

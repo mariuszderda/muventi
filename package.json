@@ -15,10 +15,16 @@
       "pre-commit": "lint-staged"
     }
   },
+  "quokka": {
+    "plugins": [
+      "dotenv-quokka-plugin"
+    ]
+  },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "cloudinary": "^2.5.1",
     "clsx": "^2.1.1",
+    "dotenv-quokka-plugin": "^1.0.0",
     "gsap": "^3.12.7",
     "mysql2": "^3.11.3",
     "next": "^15.2.4",

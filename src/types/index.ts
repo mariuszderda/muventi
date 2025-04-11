@@ -1,4 +1,4 @@
-import { QueryResult } from "mysql2";
+import { QueryResult, RowDataPacket } from "mysql2";
 
 export type DataFormDBType = {
   idOffer: string;
@@ -25,6 +25,13 @@ export type TableRowProps = {
 };
 
 export type RealizationDBDataType = {
+  image: string;
+  title: string;
+  description: string;
+  id: string;
+  realizations?: RowDataPacket[] | RealizationDBDataType[];
+};
+export type RealizationType = {
   image: string;
   title: string;
   description: string;

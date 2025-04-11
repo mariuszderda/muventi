@@ -3,6 +3,7 @@
 import { createConnection } from "@/config/db";
 import { initDb } from "@/lib/initDb";
 import { CreateOfferType, GetSingleOffer, UpdateOfferType } from "@/types";
+import { RowDataPacket } from "mysql2";
 
 initDb();
 
@@ -58,21 +59,25 @@ export const getRealization: (id: string) => Promise<GetSingleOffer> = async (
     console.log(e);
   }
 };
-export const getRealizations = async () => {
+export const getRealizations = async (limit = 0) => {
   const db = await createConnection();
   try {
-    const [result] = await db.query(`SELECT BIN_TO_UUID(id) as id,
+    const [result] = await db.query<
+      RowDataPacket[]
+    >(`SELECT BIN_TO_UUID(id) as id,
                              title,
                              description,
                              imageUrl        as image
                       FROM realizations
                       ORDER BY created_at DESC
+                      ${limit > 0 ? "LIMIT " + limit : ""}
       `);
     if (!result) {
       return {
         error: "data not found",
       };
     }
+    console.log("REALIZATYIONS: " + result);
     return result;
   } catch (e) {
     console.log(e);
