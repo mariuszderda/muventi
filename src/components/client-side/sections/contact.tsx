@@ -4,7 +4,7 @@ import { SectionTitle } from "@/components/client-side/section-title";
 
 export const Contact = () => {
   return (
-    <section className="mx-auto my-14 max-w-screen-main px-4 md:px-0">
+    <section className="mx-auto my-14 max-w-screen-main px-4 md:mt-28 md:px-0">
       <SectionTitle>kontakt</SectionTitle>
       <ContactDetail />
       <ContactForm />
