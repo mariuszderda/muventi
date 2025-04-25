@@ -4,7 +4,7 @@ import { RealizationDesk } from "@/components/client-side/realization-desk";
 import { RealizationScreen } from "@/components/client-side/realization-screen";
 import { RealizationGallery } from "@/components/client-side/realization-gallery";
 import { SectionTitle } from "@/components/client-side/section-title";
-import { RealizationDBDataType } from "@/types";
+import { RealizationType } from "@/types";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const Realization = ({
   realizations,
 }: {
-  realizations: RealizationDBDataType;
+  realizations: RealizationType[];
 }) => {
   if (!Array.isArray(realizations) || realizations.length < 0) {
     throw new Error("Something went wrong");

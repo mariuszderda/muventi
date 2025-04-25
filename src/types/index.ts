@@ -6,6 +6,7 @@ export type DataFormDBType = {
   description: string;
   imageUrl: string;
 };
+
 export type CreateOfferType = {
   title: string;
   description: string;
@@ -24,13 +25,16 @@ export type TableRowProps = {
   path: string;
 };
 
-export type RealizationDBDataType = {
-  image: string;
-  title: string;
-  description: string;
-  id: string;
-  realizations?: RowDataPacket[] | RealizationDBDataType[];
-};
+export type RealizationDBDataType =
+  | {
+      image: string;
+      title: string;
+      description: string;
+      id: string;
+    }[]
+  | { error?: string }
+  | RowDataPacket[];
+
 export type RealizationType = {
   image: string;
   title: string;

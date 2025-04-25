@@ -80,7 +80,9 @@ export const getRealizations = async (limit = 0) => {
     console.log("REALIZATYIONS: " + result);
     return result;
   } catch (e) {
-    console.log(e);
+    return {
+      error: `${e} - Something went wrong`,
+    };
   }
 };
 

@@ -18,11 +18,10 @@ export const AdvertisingMaterials = () => {
       gsap.to(sectionRefAM.current, {
         scrollTrigger: {
           pin: containerRef.current,
-          // markers: true,
-          trigger: containerRef.current,
+          trigger: articleRef.current,
           start: "bottom 80%",
-          endTrigger: imageRef.current,
           end: "bottom 80%",
+          endTrigger: imageRef.current,
           scrub: true,
         },
       });
