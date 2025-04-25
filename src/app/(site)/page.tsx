@@ -4,17 +4,15 @@ import { GraphicDesign } from "@/components/client-side/sections/graphic-design"
 import { Hero } from "@/components/client-side/sections/hero";
 import { Offer } from "@/components/client-side/sections/offer";
 import { Realization } from "@/components/client-side/sections/realization";
-import { getRealizations } from "@/lib/realizations";
 
 export default async function Home() {
-  const realizations = await getRealizations(5);
   return (
     <main>
       <Hero />
       <Offer />
       <GraphicDesign />
       <AdvertisingMaterials />
-      <Realization realizations={realizations} />
+      <Realization />
       <Contact />
     </main>
   );
