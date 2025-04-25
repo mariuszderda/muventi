@@ -1,4 +1,6 @@
 export const ContactForm = () => {
+  // todo: create email sender function
+
   return (
     <form>
       <div className="flex h-20 w-full items-center border text-base font-semibold md:h-36 md:text-2xl">

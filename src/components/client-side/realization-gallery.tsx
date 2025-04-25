@@ -12,16 +12,12 @@ export const RealizationGallery = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  // State to determine if the image is being hovered over
-
-  // Function to show the previous slide
   const prevSlide = (): void => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + realizations.length) % realizations.length
     );
   };
 
-  // Function to show the next slide
   const nextSlide = (): void => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % realizations.length);
   };

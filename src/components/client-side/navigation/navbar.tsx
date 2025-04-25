@@ -58,6 +58,8 @@ export const Navbar = () => {
     });
   }, []);
 
+  // todo fix mobile view
+
   return (
     <header
       ref={container}

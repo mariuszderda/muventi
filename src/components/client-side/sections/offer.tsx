@@ -33,10 +33,11 @@ export const Offer = () => {
         scrollTrigger: {
           pin: true,
           trigger: sectionRef.current,
-          start: "top top",
-          end: () => `+=${getScrollAmount() * -1} `,
+          start: "top 10%",
+          toggleActions: "play none none reverse",
           scrub: 5,
           snap: [0, 0.1, 0.5, 0.8, 1],
+          end: () => `+=${getScrollAmount() * -1 * 3} `,
         },
       });
     },

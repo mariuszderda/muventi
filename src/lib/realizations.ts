@@ -77,7 +77,7 @@ export const getRealizations = async (limit = 0) => {
         error: "data not found",
       };
     }
-    console.log("REALIZATYIONS: " + result);
+    console.log(result);
     return result;
   } catch (e) {
     return {
